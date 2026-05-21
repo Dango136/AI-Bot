@@ -1,3 +1,4 @@
+from logic import get_class
 from config import token
 import telebot
 from telebot.types import (
@@ -41,4 +42,5 @@ def photo(message):
     downloaded_file = bot.download_file(file_info.file_path)
     with open(file_name, 'wb') as new_file:
         new_file.write(downloaded_file)
+    get_class(file_name)
 bot.infinity_polling()
